@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Bulls and cows</string>
-    <string name="startgame">Start Game</string>
+    <string name="startgame">Bulls and cows</string>
+    <string name="Krestiki">Крестики нолики</string>
 </resources>
