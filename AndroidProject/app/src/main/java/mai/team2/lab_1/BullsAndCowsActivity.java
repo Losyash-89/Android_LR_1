@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +23,8 @@ public class BullsAndCowsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulls_and_cows);
 
-        // тестовая игра
-        MysteryNumber = "1234"; // тестовое загаданное число
+        RandomMysteryNumber(); // генерация загаданного числа
+
         Analysis("5678"); // 0 0 (быков коров)
         Analysis("1234"); // 4 0
         Analysis("4321"); // 0 4
@@ -31,6 +32,23 @@ public class BullsAndCowsActivity extends AppCompatActivity {
 
     }
 
+
+
+    public void RandomMysteryNumber(){    // макимально тупая функция рандомных неповторяющихся чисел
+        int a1, a2, a3, a4;
+        boolean b = false;
+        do{
+            a1 = (int) (Math.random() * 10);
+            a2 = (int) (Math.random() * 10);
+            a3 = (int) (Math.random() * 10);
+            a4 = (int) (Math.random() * 10);
+
+            if ((a1!=a2) & (a1!=a3) & (a1!=a4) & (a2!=a3) & (a2!=a4) & (a3!=a4))
+                b = true;
+
+        } while (b != true);
+        MysteryNumber = Integer.toString(a1) + Integer.toString(a2) + Integer.toString(a3) + Integer.toString(a4);
+    }
     public void Analysis (String number){      // сравнение введенного числа с загаданным
         int cows = 0;
         int bulls = 0;
@@ -69,6 +87,11 @@ public class BullsAndCowsActivity extends AppCompatActivity {
     public void showToast(String text) {         // для вывода ошибок
         Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void onClick(View view) {
+        RandomMysteryNumber();
+        showToast(MysteryNumber);
     }
 }
 
