@@ -2,22 +2,40 @@ package mai.team2.lab_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 public class BullsAndCowsActivity extends AppCompatActivity {
 
-    private String NumberAttempt = "Попытка\n";
+    /*private String NumberAttempt = "Попытка\n"; // временно закомментировал
     private String UserNumber = "Число\n";
     private String NumberCows = "Коров:\n";
-    private String NumberBull = "Быков:\n";
+    private String NumberBull = "Быков:\n";*/
 
+    private String NumberAttempt = "" ;
+    private String UserNumber= "" ;
+    private String NumberCows= "" ;
+    private String NumberBull="" ;
+
+    private ImageView[] hearts;
+    ImageView Image1,Image2,Image3,Image4;
+
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,input;
+    TextView Example;
+
+    /*private int HeartNum = 0;*/
+    private String Number;
     private String MysteryNumber;     // загаданное рандомное число(из 4 знаков)
     private int Attempt = 0;              // номер попытки
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +43,106 @@ public class BullsAndCowsActivity extends AppCompatActivity {
 
         RandomMysteryNumber(); // генерация загаданного числа
 
-        Analysis("5678"); // 0 0 (быков коров)
+        /*Analysis("5678"); // 0 0 (быков коров)
         Analysis("1234"); // 4 0
         Analysis("4321"); // 0 4
-        Analysis("1782"); // 1 1
+        Analysis("1782"); // 1 1*/
+        TextView TextUserNumber = findViewById(R.id.UserNumber);
+        b1 = findViewById(R.id.b1);
+        b2 = findViewById(R.id.b2);
+        b3 = findViewById(R.id.b3);
+        b4 = findViewById(R.id.b4);
+        b5 = findViewById(R.id.b5);
+        b6 = findViewById(R.id.b6);
+        b7 = findViewById(R.id.b7);
+        b8 = findViewById(R.id.b8);
+        b9 = findViewById(R.id.b9);
+        b0 = findViewById(R.id.b0);
+        /*Image1= findViewById(R.id.imageView1); // для системы жизней
+        Image2= findViewById(R.id.imageView2);
+        Image3= findViewById(R.id.imageView3);
+        Image4= findViewById(R.id.imageView4);*/
+        input = findViewById(R.id.input);
+        Example = findViewById(R.id. textView_Example);
+        Example.setText(MysteryNumber); // тестовое выведение загаданного числа на экран
 
-    }
+
+       /* hearts = new ImageView[HeartNum];
+        hearts[0] = Image1;
+        hearts[1] = Image2;
+        hearts[2] = Image3;
+        hearts[3] = Image4;*/
 
 
+
+        b1.setOnClickListener(new View.OnClickListener() {         // кнопки решил сделать как в калькуляторе
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"1");
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"2");
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"3");
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"4");
+            }
+        });
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"5");
+            }
+        });
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"6");
+            }
+        });
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"7");
+            }
+        });
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"8");
+            }
+        });
+        b9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"9");
+            }
+        });
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextUserNumber.setText(TextUserNumber.getText()+"0");
+            }
+        });
+        input.setOnClickListener(new View.OnClickListener() {                                  // самое проблемное место, здесь я планировал создать кнопку ввода, чтобы при нажатии полученное число отправлялось в функцию Analysis
+            @Override
+            public void onClick(View view) {
+                Number = TextUserNumber.toString();
+                Analysis(Number);
+            }
+        });
+}
 
     public void RandomMysteryNumber(){    // макимально тупая функция рандомных неповторяющихся чисел
         int a1, a2, a3, a4;
@@ -69,6 +179,21 @@ public class BullsAndCowsActivity extends AppCompatActivity {
         NumberAttempt += Attempt + "\n";
         UserNumber += number + "\n";
 
+        /*if (bulls<4){
+            hearts[HeartNum].setVisibility(View.INVISIBLE);
+            HeartNum++;
+        }*/
+
+        if ((Attempt<=4) && (bulls==4)){
+            Intent intent = new Intent(BullsAndCowsActivity.this, BullsAndCowsActivity_win.class);
+            startActivity(intent);
+        } else {
+            if ((Attempt==4) && (bulls<4)){
+                Intent intent = new Intent(BullsAndCowsActivity.this, BullsAndCowsActivity_end.class);
+                startActivity(intent);
+            }
+        }
+
         DisplayInfo();
     }
 
@@ -77,11 +202,12 @@ public class BullsAndCowsActivity extends AppCompatActivity {
         TextView TextUserNumber = findViewById(R.id.UserNumber);
         TextView TextNumberCows = findViewById(R.id.NumberCows);
         TextView TextNumberBull = findViewById(R.id.NumberBull);
-
         TextNumberAttempt.setText(NumberAttempt);
         TextUserNumber.setText(UserNumber);
         TextNumberCows.setText(NumberCows);
         TextNumberBull.setText(NumberBull);
+
+
     }
 
     public void showToast(String text) {         // для вывода ошибок
@@ -92,6 +218,7 @@ public class BullsAndCowsActivity extends AppCompatActivity {
     public void onClick(View view) {
         RandomMysteryNumber();
         showToast(MysteryNumber);
+
     }
 }
 

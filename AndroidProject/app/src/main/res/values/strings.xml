@@ -2,4 +2,21 @@
     <string name="app_name">Bulls and cows</string>
     <string name="startgame">Bulls and cows</string>
     <string name="Krestiki">Крестики нолики</string>
+    <string name="UserNumber">Число</string>
+    <string name="Attempt">Попытка</string>
+    <string name="Bulls">Быков</string>
+    <string name="Cows">Коров</string>
+    <string name="Win">Поздравляем!  Вы выиграли :)</string>
+    <string name="End">Вы проиграли:( \n Ничего страшного ;)</string>
+    <string name="Input">Ввод</string>
+    <string name="b1">1</string>
+    <string name="b2">2</string>
+    <string name="b3">3</string>
+    <string name="b4">4</string>
+    <string name="b5">5</string>
+    <string name="b6">6</string>
+    <string name="b7">7</string>
+    <string name="b8">8</string>
+    <string name="b9">9</string>
+    <string name="b0">0</string>
 </resources>
