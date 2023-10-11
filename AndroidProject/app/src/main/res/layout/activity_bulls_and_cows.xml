@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="136dp"
         android:text="@string/Attempt"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -238,7 +238,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/imageView1"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -249,7 +249,7 @@
         app:layout_constraintVertical_bias="0.099"
         app:srcCompat="@drawable/heart" />
 
-    <!--<ImageView
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="30dp"
         android:layout_height="30dp"

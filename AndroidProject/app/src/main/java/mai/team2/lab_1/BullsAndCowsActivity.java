@@ -78,61 +78,71 @@ public class BullsAndCowsActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {         // кнопки решил сделать как в калькуляторе
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"1");
+                String buttonText = b1.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"2");
+                String buttonText = b2.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"3");
+                String buttonText = b3.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"4");
+                String buttonText = b4.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"5");
+                String buttonText = b5.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"6");
+                String buttonText = b6.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"7");
+                String buttonText = b7.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"8");
+                String buttonText = b8.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"9");
+                String buttonText = b9.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextUserNumber.setText(TextUserNumber.getText()+"0");
+                String buttonText = b0.getText().toString();
+                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
             }
         });
         input.setOnClickListener(new View.OnClickListener() {                                  // самое проблемное место, здесь я планировал создать кнопку ввода, чтобы при нажатии полученное число отправлялось в функцию Analysis
@@ -160,6 +170,7 @@ public class BullsAndCowsActivity extends AppCompatActivity {
         MysteryNumber = Integer.toString(a1) + Integer.toString(a2) + Integer.toString(a3) + Integer.toString(a4);
     }
     public void Analysis (String number){      // сравнение введенного числа с загаданным
+        /*number = Number;*/
         int cows = 0;
         int bulls = 0;
         for (int i=0; i<4; i++){
@@ -206,7 +217,7 @@ public class BullsAndCowsActivity extends AppCompatActivity {
         TextUserNumber.setText(UserNumber);
         TextNumberCows.setText(NumberCows);
         TextNumberBull.setText(NumberBull);
-
+        /*Example.setText(UserNumber);*/
 
     }
 
