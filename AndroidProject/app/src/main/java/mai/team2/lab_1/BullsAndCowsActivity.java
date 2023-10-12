@@ -16,24 +16,18 @@ import android.widget.Button;
 import android.widget.TextView;
 public class BullsAndCowsActivity extends AppCompatActivity {
 
-    /*private String NumberAttempt = "Попытка\n"; // временно закомментировал
+    private String NumberAttempt = "Попытка\n"; // временно закомментировал
     private String UserNumber = "Число\n";
     private String NumberCows = "Коров:\n";
-    private String NumberBull = "Быков:\n";*/
-
-    private String NumberAttempt = "" ;
-    private String UserNumber= "" ;
-    private String NumberCows= "" ;
-    private String NumberBull="" ;
+    private String NumberBull = "Быков:\n";
 
     private ImageView[] hearts;
     ImageView Image1,Image2,Image3,Image4;
 
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,input;
     TextView Example;
 
     /*private int HeartNum = 0;*/
-    private String Number;
+    private String Number = "";
     private String MysteryNumber;     // загаданное рандомное число(из 4 знаков)
     private int Attempt = 0;              // номер попытки
     @Override
@@ -43,116 +37,31 @@ public class BullsAndCowsActivity extends AppCompatActivity {
 
         RandomMysteryNumber(); // генерация загаданного числа
 
-        /*Analysis("5678"); // 0 0 (быков коров)
-        Analysis("1234"); // 4 0
-        Analysis("4321"); // 0 4
-        Analysis("1782"); // 1 1*/
         TextView TextUserNumber = findViewById(R.id.UserNumber);
-        b1 = findViewById(R.id.b1);
-        b2 = findViewById(R.id.b2);
-        b3 = findViewById(R.id.b3);
-        b4 = findViewById(R.id.b4);
-        b5 = findViewById(R.id.b5);
-        b6 = findViewById(R.id.b6);
-        b7 = findViewById(R.id.b7);
-        b8 = findViewById(R.id.b8);
-        b9 = findViewById(R.id.b9);
-        b0 = findViewById(R.id.b0);
-        /*Image1= findViewById(R.id.imageView1); // для системы жизней
+
+        /*
+        Image1= findViewById(R.id.imageView1); // для системы жизней
         Image2= findViewById(R.id.imageView2);
         Image3= findViewById(R.id.imageView3);
         Image4= findViewById(R.id.imageView4);*/
-        input = findViewById(R.id.input);
+        Button input = findViewById(R.id.input);
         Example = findViewById(R.id. textView_Example);
         Example.setText(MysteryNumber); // тестовое выведение загаданного числа на экран
 
-
-       /* hearts = new ImageView[HeartNum];
-        hearts[0] = Image1;
-        hearts[1] = Image2;
-        hearts[2] = Image3;
-        hearts[3] = Image4;*/
-
-
-
-        b1.setOnClickListener(new View.OnClickListener() {         // кнопки решил сделать как в калькуляторе
-            @Override
-            public void onClick(View view) {
-                String buttonText = b1.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b2.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b3.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b4.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b5.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b6.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b7.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b8.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b9.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
-        b0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String buttonText = b0.getText().toString();
-                TextUserNumber.setText(TextUserNumber.getText()+buttonText);
-            }
-        });
         input.setOnClickListener(new View.OnClickListener() {                                  // самое проблемное место, здесь я планировал создать кнопку ввода, чтобы при нажатии полученное число отправлялось в функцию Analysis
             @Override
             public void onClick(View view) {
-                Number = TextUserNumber.toString();
                 Analysis(Number);
+                Number = "";
             }
         });
 }
+
+    public void onClickNumber(View v){
+        Button b = findViewById(v.getId());
+        Number += b.getText().toString();
+        Example.setText(Number);
+    }
 
     public void RandomMysteryNumber(){    // макимально тупая функция рандомных неповторяющихся чисел
         int a1, a2, a3, a4;

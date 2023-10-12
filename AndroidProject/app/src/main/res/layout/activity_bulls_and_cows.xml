@@ -6,47 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".BullsAndCowsActivity">
 
-    <TextView
-        android:id="@+id/textView_Number2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="136dp"
-        android:text="@string/Attempt"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_Number3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:text="@string/Cows"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/textView_Number2"
-        app:layout_constraintTop_toTopOf="@+id/textView_Number2" />
-
-    <TextView
-        android:id="@+id/textView_Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:text="@string/UserNumber"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/textView_Number2"
-        app:layout_constraintTop_toTopOf="@+id/textView_Number2" />
-
-    <TextView
-        android:id="@+id/textView_Number4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="276dp"
-        android:text="@string/Bulls"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/textView_Number2"
-        app:layout_constraintTop_toTopOf="@+id/textView_Number2" />
-
     <Button
         android:id="@+id/input"
         android:layout_width="wrap_content"
@@ -65,7 +24,8 @@
         android:layout_marginTop="20dp"
         android:text="@string/b9"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toBottomOf="@+id/b0" />
+        app:layout_constraintTop_toBottomOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b8"
@@ -75,7 +35,8 @@
         android:layout_marginTop="20dp"
         android:text="@string/b8"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toBottomOf="@+id/b0" />
+        app:layout_constraintTop_toBottomOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b7"
@@ -85,7 +46,8 @@
         android:layout_marginTop="20dp"
         android:text="@string/b7"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toBottomOf="@+id/b0" />
+        app:layout_constraintTop_toBottomOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b6"
@@ -95,7 +57,8 @@
         android:layout_marginTop="20dp"
         android:text="@string/b6"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toBottomOf="@+id/b0" />
+        app:layout_constraintTop_toBottomOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b5"
@@ -105,7 +68,8 @@
         android:layout_marginTop="20dp"
         android:text="@string/b5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b0" />
+        app:layout_constraintTop_toBottomOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b4"
@@ -123,7 +87,8 @@
         android:layout_marginStart="180dp"
         android:text="@string/b3"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toTopOf="@+id/b0" />
+        app:layout_constraintTop_toTopOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b2"
@@ -132,7 +97,8 @@
         android:layout_marginStart="100dp"
         android:text="@string/b2"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toTopOf="@+id/b0" />
+        app:layout_constraintTop_toTopOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <Button
         android:id="@+id/b1"
@@ -141,7 +107,8 @@
         android:layout_marginStart="20dp"
         android:text="@string/b1"
         app:layout_constraintStart_toEndOf="@+id/b0"
-        app:layout_constraintTop_toTopOf="@+id/b0" />
+        app:layout_constraintTop_toTopOf="@+id/b0"
+        android:onClick="onClickNumber"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -158,9 +125,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="344dp"
-        android:layout_height="247dp"
-        android:layout_marginTop="-160dp"
+        android:layout_width="337dp"
+        android:layout_height="201dp"
+        android:layout_marginTop="-290dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -207,23 +174,12 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.855" />
-
-    <Button
         android:id="@+id/b0"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="416dp"
+        android:onClick="onClickNumber"
         android:text="@string/b0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -232,11 +188,11 @@
         android:id="@+id/textView_Example"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="184dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/b2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <!--<ImageView
         android:id="@+id/imageView1"
