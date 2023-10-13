@@ -11,12 +11,23 @@
         android:id="@+id/textView4"
         android:layout_width="308dp"
         android:layout_height="29dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginBottom="76dp"
         android:text="@string/Win"
+        android:textAlignment="center"
         android:textColor="#FAF9F8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_to_main_2"
+        app:layout_constraintEnd_toEndOf="@+id/button_to_main_2"
+        app:layout_constraintStart_toStartOf="@+id/button_to_main_2"
         tools:textSize="20sp"
         tools:textStyle="italic" />
+
+    <Button
+        android:id="@+id/button_to_main_2"
+        android:layout_width="178dp"
+        android:layout_height="37dp"
+        android:text="@string/Button_to_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

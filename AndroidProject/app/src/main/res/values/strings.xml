@@ -6,9 +6,11 @@
     <string name="Attempt">Попытка</string>
     <string name="Bulls">Быков</string>
     <string name="Cows">Коров</string>
+    <string name="TextView">Мы загадали число.\n У вас есть 4 попытки чтобы угадать его.</string>
     <string name="Win">Поздравляем!  Вы выиграли :)</string>
     <string name="End">Вы проиграли:( \n Ничего страшного ;)</string>
     <string name="Input">Ввод</string>
+    <string name="Button_to_main">В главное меню</string>
     <string name="b1">1</string>
     <string name="b2">2</string>
     <string name="b3">3</string>

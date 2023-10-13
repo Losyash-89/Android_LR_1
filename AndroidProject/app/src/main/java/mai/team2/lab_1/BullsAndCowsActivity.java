@@ -22,11 +22,9 @@ public class BullsAndCowsActivity extends AppCompatActivity {
     private String NumberBull = "Быков:\n";
 
     private Button[] affectedButtons = new Button[4];
-    ImageView Image1,Image2,Image3,Image4;
 
     TextView Example;
 
-    /*private int HeartNum = 0;*/
     private String Number = "";       // временная переменная для введения числа пользователем
     private String MysteryNumber;     // загаданное рандомное число(из 4 знаков)
     private int Attempt = 0;              // номер попытки
@@ -37,11 +35,6 @@ public class BullsAndCowsActivity extends AppCompatActivity {
 
         RandomMysteryNumber(); // генерация загаданного числa
 
-
-        Image1= findViewById(R.id.imageView1); // для системы жизней
-        Image2= findViewById(R.id.imageView2);
-        Image3= findViewById(R.id.imageView3);
-        Image4= findViewById(R.id.imageView4);
 
         Button input = findViewById(R.id.input);
         Example = findViewById(R.id. textView_Example);
@@ -68,7 +61,7 @@ public class BullsAndCowsActivity extends AppCompatActivity {
             Analysis();
     }
 
-    public void RandomMysteryNumber(){    // макимально тупая функция рандомных неповторяющихся чисел
+    public void RandomMysteryNumber(){    //  функция рандомных неповторяющихся чисел
         int a1, a2, a3, a4;
         do{
             a1 = (int) (Math.random() * 10);
